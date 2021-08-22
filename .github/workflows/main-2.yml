@@ -17,7 +17,7 @@ jobs:
           - 3.8 # with a build matrix, you can specify a list of python versions to deploy with
     steps:
       # --------- use Python to install Python dependencies and run linter, tests, etc. ---------
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@main
       - name: Set up Python ${{ matrix.python-version }}
         uses: actions/setup-python@v2
         with:
