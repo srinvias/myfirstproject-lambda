@@ -1,0 +1,24 @@
+service: myfirstproject-lambda
+provider:
+  name: aws
+  runtime: python3.7
+  region: us-east-1
+
+custom:
+  pythonRequirements:
+    dockerizePip: true
+
+package:
+  individually: false
+  exclude:
+    - package.json
+    - package-log.json
+    - node_modules/**
+
+functions:
+  get_joke:
+    handler: handler.hello
+
+
+plugins:
+  - serverless-python-requirements
